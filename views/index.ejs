@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Car blog</title>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <div class="container">
+      <div class="buttons"><%- include("partials/footerButtons.ejs") %></div>
+      <div class="column">
+        <p>
+          This is a blog where you can write which is your favourite car and
+          read about other people ones!
+        </p>
+
+        <% if(locals.marka){ %>
+        <div class="parathuro">
+          <p class="prosthiki">
+            Επιτυχής προσθήκη εγγραφής! Βρες το στη κατηγορία -Read-
+          </p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

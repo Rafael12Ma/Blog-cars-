@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Car blog</title>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <div class="container">
+      <div class="buttons"><%- include("partials/footerButtons.ejs") %></div>
+      <% if (locals.marka){ %>
+      <h2>
+        Επιτυχής προσθήκη. Πήγαινε στην κατηγορία -Read- για να δεις την εγγραφή
+        σου .
+      </h2>
+      <% } %> <% if (locals.carKind){ %> 
+        
+      <ul>
+        <% for(let car of carKind){%>
+        <li>
+          <form action="/">
+            <input
+              class="class1"
+              type="submit"
+              value="<%= car.marka %> <%= car.montelo %>"
+              name="<%= car.marka %>"
+            />
+          </form>
+        </li>
+         <% } %>
+      </ul>
+      <% if (locals.marka){ %>
+      <li><a href="/<%=marka %>"> <%= marka %> </a></li>
+
+      <% } %> <% } %>
+    </div>
+  </body>
+</html>
